@@ -1,12 +1,12 @@
 // Distributed with a free-will license.
 // Use it any way you want, profit or free, provided it fits in the licenses of its associated works.
-// ADC121C_MQ4
+// MQ4
 // This code is designed to work with the ADC121C_I2CGAS_MQ4 I2C Mini Module available from ControlEverything.com.
 // https://www.controleverything.com/content/Gas?sku=ADC121C_I2CGAS_MQ4#tabs-0-product_tabset-2
 
 #include <Wire.h>
 
-// ADC121C_MQ4 I2C address is 0x50(80)
+// MQ4 I2C address is 0x50(80)
 #define Addr 0x50
 
 void setup()
