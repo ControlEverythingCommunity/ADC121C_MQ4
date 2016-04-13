@@ -42,7 +42,7 @@ void loop()
   
   // Convert the data to 12-bits
   int raw_adc = ((data[0] & 0x0F) * 256) + data[1];
-  float ppm = (10000.0 / 4095.0) * raw_adc;
+  float ppm = (10000.0 / 4095.0) * raw_adc + 200;
   
   // Output data to serial monitor
   Serial.print("Methane concentration : ");
