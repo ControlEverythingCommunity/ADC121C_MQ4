@@ -11,11 +11,12 @@
 #define Addr 0x50
 
 int raw_adc = 0;
+float ppm = 0.0;
 void setup()
 {
   // Set variable
   Particle.variable("i2cdevice", "MQ4");
-  Particle.variable("rawADC", raw_adc);
+  Particle.variable("ppm", ppm);
 
   // Initialise I2C communication as MASTER
   Wire.begin();
@@ -49,7 +50,7 @@ void loop()
 
   // Convert the data to 12-bits
   raw_adc = ((data[0] & 0x0F) * 256) + data[1];
-  ppm = (10000 / 4095) * raw_adc;
+  ppm = (10000.0 / 4095.0) * raw_adc + 200.0;
 
   // Output data to dashboard
   Particle.publish("Methane concentration : ", String(ppm));
