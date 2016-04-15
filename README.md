@@ -1,6 +1,6 @@
-[![MQ4](ADC121C_I2CGAS_MQ4.png)](https://www.controleverything.com/content/Gas?sku=ADC121C_I2CGAS_MQ4)
-# MQ4
-MQ4 Gas Sensor.
+[![ADC121_MQ4](ADC121C_I2CGAS_MQ4.png)](https://www.controleverything.com/content/Gas?sku=ADC121C_I2CGAS_MQ4)
+# ADC121_MQ4
+ADC121_MQ4 Gas Sensor.
 
 The MQ4 is capable of sensing methane or natural gas air concentration levels.
 
@@ -19,12 +19,12 @@ Download (or git pull) the code in pi.
 
 Compile the java program.
 ```cpp
-$> pi4j MQ4.java
+$> pi4j ADC121_MQ4.java
 ```
 
 Run the java program.
 ```cpp
-$> pi4j MQ4
+$> pi4j ADC121_MQ4
 ```
 
 ## Python
@@ -35,7 +35,7 @@ https://pypi.python.org/pypi/smbus-cffi/0.5.1
 Download (or git pull) the code in pi. Run the program.
 
 ```cpp
-$> python MQ4.py
+$> python ADC121_MQ4.py
 ```
 
 ## Arduino
@@ -46,5 +46,20 @@ https://www.arduino.cc/en/Main/Software
 Download (or git pull) the code and double click the file to run the program.
 
 Compile and upload the code on Arduino IDE and see the output on Serial Monitor.
-
+ 
+ 
+## Particle Photon
+ 
+Login to your Photon and setup your device according to steps provided at:
+ 
+https://docs.particle.io/guide/getting-started/connect/photon/
+ 
+Download (or git pull) the code. Go to online IDE and copy the code.
+ 
+https://build.particle.io/build/
+ 
+Verify and flash the code on your Photon. Code output is shown in logs at dashboard:
+ 
+https://dashboard.particle.io/user/logs
+ 
 #####The code output is the methane concentration in ppm.

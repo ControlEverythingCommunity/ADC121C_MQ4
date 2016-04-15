@@ -1,21 +1,22 @@
 // Distributed with a free-will license.
 // Use it any way you want, profit or free, provided it fits in the licenses of its associated works.
-// MQ4
+// ADC121_MQ4
 // This code is designed to work with the ADC121C_I2CGAS_MQ4 I2C Mini Module available from ControlEverything.com.
 // https://www.controleverything.com/content/Gas?sku=ADC121C_I2CGAS_MQ4#tabs-0-product_tabset-2
 
 #include <application.h>
 #include <spark_wiring_i2c.h>
 
-// MQ4 I2C address is 0x50(80)
+// ADC121_MQ4 I2C address is 0x50(80)
 #define Addr 0x50
 
 int raw_adc = 0;
+float ppm = 0.0;
 void setup()
 {
   // Set variable
-  Particle.variable("i2cdevice", "MQ4");
-  Particle.variable("rawADC", raw_adc);
+  Particle.variable("i2cdevice", "ADC121_MQ4");
+  Particle.variable("PPM", ppm);
 
   // Initialise I2C communication as MASTER
   Wire.begin();
@@ -49,7 +50,7 @@ void loop()
 
   // Convert the data to 12-bits
   raw_adc = ((data[0] & 0x0F) * 256) + data[1];
-  ppm = (10000 / 4095) * raw_adc;
+  ppm = (10000 / 4096.0) * raw_adc + 200;
 
   // Output data to dashboard
   Particle.publish("Methane concentration : ", String(ppm));

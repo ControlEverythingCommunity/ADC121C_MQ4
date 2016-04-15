@@ -1,12 +1,12 @@
 // Distributed with a free-will license.
 // Use it any way you want, profit or free, provided it fits in the licenses of its associated works.
-// MQ4
+// ADC121_MQ4
 // This code is designed to work with the ADC121C_I2CGAS_MQ4 I2C Mini Module available from ControlEverything.com.
 // https://www.controleverything.com/content/Gas?sku=ADC121C_I2CGAS_MQ4#tabs-0-product_tabset-2
 
 #include <Wire.h>
 
-// MQ4 I2C address is 0x50(80)
+// ADC121_MQ4 I2C address is 0x50(80)
 #define Addr 0x50
 
 void setup()
@@ -42,7 +42,7 @@ void loop()
   
   // Convert the data to 12-bits
   int raw_adc = ((data[0] & 0x0F) * 256) + data[1];
-  float ppm = (10000.0 / 4095.0) * raw_adc;
+  float ppm = (10000.0 / 4096.0) * raw_adc + 200;
   
   // Output data to serial monitor
   Serial.print("Methane concentration : ");
