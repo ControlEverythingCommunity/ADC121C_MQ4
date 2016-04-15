@@ -42,7 +42,11 @@ void loop()
   
   // Convert the data to 12-bits
   int raw_adc = ((data[0] & 0x0F) * 256) + data[1];
+<<<<<<< HEAD:Arduino/ADC121_MQ4.ino
   float ppm = (10000.0 / 4096.0) * raw_adc + 200;
+=======
+  float ppm = (10000.0 / 4095.0) * raw_adc + 200;
+>>>>>>> origin/master:Arduino/MQ4.ino
   
   // Output data to serial monitor
   Serial.print("Methane concentration : ");
