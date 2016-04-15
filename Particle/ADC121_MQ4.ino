@@ -15,13 +15,8 @@ float ppm = 0.0;
 void setup()
 {
   // Set variable
-<<<<<<< HEAD:Particle/ADC121_MQ4.ino
   Particle.variable("i2cdevice", "ADC121_MQ4");
   Particle.variable("PPM", ppm);
-=======
-  Particle.variable("i2cdevice", "MQ4");
-  Particle.variable("ppm", ppm);
->>>>>>> origin/master:Particle/MQ4.ino
 
   // Initialise I2C communication as MASTER
   Wire.begin();
@@ -55,11 +50,7 @@ void loop()
 
   // Convert the data to 12-bits
   raw_adc = ((data[0] & 0x0F) * 256) + data[1];
-<<<<<<< HEAD:Particle/ADC121_MQ4.ino
-  ppm = (10000 / 4096.0) * raw_adc + 200;
-=======
-  ppm = (10000.0 / 4095.0) * raw_adc + 200.0;
->>>>>>> origin/master:Particle/MQ4.ino
+  ppm = (10000 / 4096.0) * raw_adc + 200.0;
 
   // Output data to dashboard
   Particle.publish("Methane concentration : ", String(ppm));
