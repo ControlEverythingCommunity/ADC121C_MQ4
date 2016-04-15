@@ -46,8 +46,6 @@ https://www.arduino.cc/en/Main/Software
 Download (or git pull) the code and double click the file to run the program.
 
 Compile and upload the code on Arduino IDE and see the output on Serial Monitor.
-<<<<<<< HEAD
- 
  
 ## Particle Photon
  
@@ -62,23 +60,5 @@ https://build.particle.io/build/
 Verify and flash the code on your Photon. Code output is shown in logs at dashboard:
  
 https://dashboard.particle.io/user/logs
- 
-=======
 
-
-## Particle Photon
-
-Login to your Photon and setup your device according to steps provided at:
-
-https://docs.particle.io/guide/getting-started/connect/photon/
-
-Download (or git pull) the code. Go to online IDE and copy the code.
-
-https://build.particle.io/build/
-
-Verify and flash the code on your Photon. Code output is shown in logs at dashboard:
-
-https://dashboard.particle.io/user/logs
-
->>>>>>> origin/master
 #####The code output is the methane concentration in ppm.
