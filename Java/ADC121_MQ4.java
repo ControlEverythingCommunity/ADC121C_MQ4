@@ -29,5 +29,6 @@ public class ADC121_MQ4
 		
 		// Output data to screen
 		System.out.printf("Methane Concentration : %.2f ppm %n", ppm);
+        
 	}
 }
